@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sammy's Professional Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/hobbies">Hobbies</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section id="intro" class="intro">
+            <canvas id="noiseCanvas"></canvas>
+            <div class="intro-content">
+                <h1>Hello I'm Sammy :D</h1>
+            </div>
+        </section>
+
+
+        <section id="about" class="about">
+            <div class="content">
+                <p>Hi, I'm Sammy, a passionate coder with a strong foundation in Python and a solid understanding of JavaScript. I thrive in collaborative environments and am always eager to take on new challenges and projects.</p>
+            </div>
+        </section>
+
+
+        <section id="skills" class="skills animate__animated animate__fadeInUp">
+            <div class="skills-container">
+                <div class="skills-left">
+                    <h2>Skills</h2>
+                    <p>As a software engineer, I am proficient in developing  applications using the Following technologies. I am committed to continuous learning and applying best practices in all my projects.</p>
+                </div>
+                <div class="skills-right">
+                    <ul>
+                        <li class="animate__animated animate__bounceIn">Python</li>
+                        <li class="animate__animated animate__bounceIn">JavaScript</li>
+                        <li class="animate__animated animate__bounceIn">Node.js</li>
+                        <li class="animate__animated animate__bounceIn">HTML & CSS</li>
+                        <li class="animate__animated animate__bounceIn">Git</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="content">
+                <h2>Contact</h2>
+                <p>I'm open to code and project suggestions. Feel free to share your ideas or reach out for collaborations.</p>
+                <ul class="contact-links">
+                    <p>Connect with me on <a href="https://github.com/greenstorm5417" target="_blank">GitHub</a> or reach out via Discord: <strong>_thegamer</strong>.</p>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

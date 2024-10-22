@@ -1,0 +1,287 @@
+/* index.css */
+
+/* CSS Variables for Colors */
+:root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --accent-color: #4caf50; /* Green Accent */
+    --header-bg: #1f1f1f;
+    --link-color: #81c784;
+    --hover-color: #66bb6a;
+    --section-padding: 60px 20px;
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 20px 40px; /* Increased left padding for left alignment */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; /* Left-align the navigation */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 1.1em;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+main {
+    padding: var(--section-padding);
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 2s ease-in;
+}
+
+/* Intro Section Styles */
+.intro {
+    position: relative;
+    height: 60vh; /* Shrink the height from 100vh to 60vh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.intro canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; /* Increase width for more zoomed-in noise */
+    height: 200%; /* Increase height for more zoomed-in noise */
+    z-index: 0;
+    transform: translate(-25%, -25%); /* Center the zoomed-in noise */
+}
+
+.intro-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.intro-content h1 {
+    font-size: 3em;
+    color: var(--accent-color);
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 60px;
+    border-radius: 8px;
+    padding: 40px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    background-color: #1e1e1e;
+    position: relative;
+    overflow: hidden;
+}
+
+.about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 10px 0;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.skills-left, .skills-right {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+
+
+.skills-left h2 {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-out;
+    text-align: left; /* Left-align the title */
+}
+
+.skills-left p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 10px 0;
+    animation: fadeInUp 1.5s ease-out;
+    text-align: left; /* Left-align the description */
+}
+
+
+
+.skills-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-right ul li {
+    background-color: #2a2a2a;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.skills-right ul li:hover {
+    transform: translateY(-5px);
+    background-color: #3c3c3c;
+}
+
+/* Contact Section */
+.contact .content {
+    text-align: left; /* Left-align the content */
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-out;
+    text-align: left; /* Left-align the title */
+}
+
+.contact p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 10px 0;
+    animation: fadeInUp 1.5s ease-out;
+    text-align: left; /* Left-align the paragraph */
+}
+
+.contact ul.contact-links {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Left-align the list */
+}
+
+.contact ul.contact-links li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.contact ul.contact-links li a {
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start on mobile */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .intro-content h1 {
+        font-size: 2.5em;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-left, .skills-right {
+        margin: 10px 0;
+    }
+
+    .skills-right ul {
+        align-items: center;
+    }
+
+    .skills-right ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .skills-left h2,
+    .contact h2 {
+        font-size: 2em;
+        text-align: left; /* Maintain left alignment on mobile */
+    }
+
+    .contact ul.contact-links {
+        text-align: left; /* Keep left alignment on mobile */
+    }
+}

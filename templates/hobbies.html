@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sammy's Hobbies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hobbies.css') }}">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/hobbies">Hobbies</a></li>
+                <!-- Add more navigation links here if needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hobbies">
+            <h2>My Hobbies</h2>
+            <ul>
+                <li>
+                    <h3>Sailing</h3>
+                    <p>I sail 420's for the Episcopal School of Jacksonville.</p>
+                </li>
+                <li>
+                    <h3>Flying Drones</h3>
+                    <p>I own 2 drones with a combined 20 hours of flight time.</p>
+                </li>
+                <li>
+                    <h3>Photography</h3>
+                    <p>Exploring the world through my lens. <!-- Placeholder for photos --></p>
+                    <div class="photo-gallery">
+                        <!-- Add your photos here -->
+                        <img src="#" alt="Photo 1">
+                        <img src="#" alt="Photo 2">
+                        <!-- More images as needed -->
+                    </div>
+                </li>
+                <li>
+                    <h3>Building Computers</h3>
+                    <p>I have built 2 computers and provide tech support for my friends.</p>
+                </li>
+                <li>
+                    <h3>Learning New Things</h3>
+                    <p>Always eager to expand my knowledge and skills in various domains.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/hobbies.js') }}"></script>
+</body>
+</html>
